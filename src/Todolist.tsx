@@ -1,10 +1,10 @@
 import React, {useCallback} from 'react'
-import {FilterValuesType} from './App'
 import {AddItemForm} from './AddItemForm'
 import {EditableSpan} from './EditableSpan'
 import {Button, IconButton} from '@material-ui/core'
 import {Delete} from '@material-ui/icons'
 import {Task} from './Task'
+import {FilterValuesType} from "./AppWithRedux";
 
 export type TaskType = {
     id: string
@@ -65,10 +65,10 @@ export const Todolist = React.memo(function (props: PropsType) {
         <div>
             {
                 tasksForTodolist.map(t => <Task key={t.id} task={t} todolistId={props.id}
-                                          removeTask={props.removeTask}
-                                          changeTaskTitle={props.changeTaskTitle}
-                                          changeTaskStatus={props.changeTaskStatus}
-                    />)
+                                                removeTask={props.removeTask}
+                                                changeTaskTitle={props.changeTaskTitle}
+                                                changeTaskStatus={props.changeTaskStatus}
+                />)
             }
         </div>
         <div style={{paddingTop: '10px'}}>
