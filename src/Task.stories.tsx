@@ -1,6 +1,7 @@
 import React from 'react'
 import {action} from '@storybook/addon-actions'
 import {Task} from './Task'
+import {TaskPriorities, TaskStatuses} from "./api/task-api";
 
 export default {
     title: 'Task Stories',
@@ -15,14 +16,29 @@ export const TaskBaseExample = (props: any) => {
     return (
         <div>
             <Task
-                task={{id: '1', isDone: true, title: "CSS"}}
+                task={{id: '1', title: "CSS", status: TaskStatuses.New,
+                    todoListId: "todolistId1",
+                    addedDate:'',
+                    description : '' ,
+                    startDate:'',
+                    deadline: '',
+                    order: 0,
+                    priority: TaskPriorities.Low}}
                 removeTask={removeCallback}
                 changeTaskTitle={changeTitleCallback}
                 changeTaskStatus={changeStatusCallback}
                 todolistId={"todolistId1"}
             />
             <Task
-                task={{id: '2', isDone: false, title: "JS"}}
+                task={{id: '2',  title: "JS",
+                    status: TaskStatuses.New,
+                    todoListId: "todolistId1",
+                    addedDate:'',
+                    description : '' ,
+                    startDate:'',
+                    deadline: '',
+                    order: 0,
+                    priority: TaskPriorities.Low}}
                 removeTask={removeCallback}
                 changeTaskTitle={changeTitleCallback}
                 changeTaskStatus={changeStatusCallback}
